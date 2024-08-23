@@ -416,8 +416,42 @@ footer li a{
 	}
 }
 
+/* Carrusel animado  */
 
 .fade-in {
 	-webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 	animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+.carousel {
+	position: relative;
+	width: 100%;
+	max-width: 600px;
+	margin: auto;
+	overflow: hidden;
+	border: 2px solid #ddd;
+}
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden;
+    border: 2px solid #ddd;
+}
+.carousel-item {
+    display: none;
+}
+.carousel-item.active {
+    display: block;
+}
+.carousel-caption {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
 }
