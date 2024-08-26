@@ -1,15 +1,22 @@
 $(document).ready(function () {
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const slideWidth = slides[0].getBoundingClientRect().width;
     let currentSlide = 0;
-    const slides = document.querySelectorAll('.carousel-item');
 
-    function showSlide(index) {
-        slides[currentSlide].classList.remove('active');
-        currentSlide = (index + slides.length) % slides.length;
-        slides[currentSlide].classList.add('active');
+    function moveToSlide(track, currentSlide, targetSlide) {
+        track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
+        currentSlide = targetSlide;
     }
 
+    slides.forEach((slide, index) => {
+        slide.style.left = slideWidth * index + 'px';
+    });
+
     function nextSlide() {
-        showSlide(currentSlide + 1);
+        const currentSlideIndex = (currentSlide + 1) % ((slides.length)-2);
+        moveToSlide(track, currentSlide, slides[currentSlideIndex]);
+        currentSlide = currentSlideIndex;
     }
 
     setInterval(nextSlide, 3000); // Cambia de imagen cada 3 segundos
