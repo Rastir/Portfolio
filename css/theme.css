@@ -463,3 +463,37 @@ footer li a{
 .description.active {
     display: block;
 }
+
+/* Vizualizador de imagenes en proyectos*/
+
+.col-md-4 {
+	text-align: center;
+}
+
+.hover-outer-box {
+	position: relative;
+	width: 100%;
+	height: 300px;
+}
+
+.hover-inner-box {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 0;
+	transition: opacity 01s ease;
+}
+.hover-outer-box:hover .hover-inner-box {
+	opacity: 1;
+}
+.hover-outer-box:hover img:first-child {
+	opacity: 0.5;
+}
+.light {
+	margin-top: 10px;
+}
